@@ -1,0 +1,22 @@
+name: manuel-crud
+
+services:
+  database:
+    type: mysql:8.0
+    portforward: true
+    creds:
+      user: mc-user
+      password: mc-pass
+      database: mc-database
+
+  phpmyadmin:
+    type: phpmyadmin
+    services:
+      - database
+    portforward: 3306 # Puedes ajustar el puerto si lo necesitas
+
+tooling:
+  mysql:
+    service: database
+  phpmyadmin:
+    service: phpmyadmin

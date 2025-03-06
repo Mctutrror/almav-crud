@@ -13,7 +13,7 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'user_id', 
+        'user_id',
     ];
 
     // Relación: una tarea pertenece a un usuario
